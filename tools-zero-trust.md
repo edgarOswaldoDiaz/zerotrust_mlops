@@ -162,4 +162,4 @@ Nota: para utilizar Puppet considerar "This project is deprecated".
 
 ______________
 
-> CIMPS - CIMAT 2024
+> CIMPS 2024 - CIMAT
