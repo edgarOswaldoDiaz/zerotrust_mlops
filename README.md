@@ -1,8 +1,8 @@
-## Responsive infrastructure with Zero Trust for automated processes oriented to data science. 
+## Infraestructura responsiva con Zero Trust para procesos automatizados orientados a ciencia de datos.
 
-Abstract — This article describes how the implementation of a Responsive Infrastructure with the Zero Trust [3] strategy can reduce risks in automated processes oriented towards statistical and geospatial data science with levels of security and privacy using information and communication technologies.
+Este repositorio es parte del artículo que describe cómo la implementación de una Infraestructura Responsiva con la estrategia de Zero Trust, puede reducir riesgos en los procesos automatizados orientados en ciencia de datos estadísticos y geoespaciales con niveles de seguridad y privacidad con tecnologías de información y comunicaciones.
 
 _____________________________
 
-> CIMAT - CIMPS 2024
+> CIMPS 2024 - CIMAT
 
