@@ -1,0 +1,44 @@
+
+version: "3.7"
+
+services:
+
+######### Capa de interoperabilidad #########
+  mlflow-database:
+    image: postgres:16.2
+    environment:
+      POSTGRES_DB_FILE: /run/secrets/mlflow-database_db
+      POSTGRES_USER_FILE: /run/secrets/mlflow-database_user
+      POSTGRES_PASSWORD_FILE: /run/secrets/mlflow-database_password
+    secrets:
+      - mlflow-database_db
+      - mlflow-database_user
+      - mlflow-database_password
+    volumes:
+      - mlflow-database_vol:/var/lib/postgresql/data
+
+  mlflow:
+    image: lcid-mlflow:v2.10.2
+    build: services/mlflow
+    env_file:
+      - services/mlflow/.env
+    ports:
+      - 5000:5000
+    depends_on:
+      - mlflow-database
+
+networks:
+  default:
+    driver: bridge
+    name: datalake4os-net
+
+volumes:
+  mlflow-database_vol:
+
+secrets:
+  mlflow-database_db:
+    file: services/mlflow/database/postgres_db.env
+  mlflow-database_user:
+    file: services/mlflow/database/postgres_user.env
+  mlflow-database_password:
+    file: services/mlflow/database/postgres_password.env
